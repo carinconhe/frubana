@@ -52,21 +52,27 @@
 
         echo '<br>2....<br>';
         $n_nodes = 5; 
-        $node_colors = "1 2 3 2 3"; // node colors
+        echo 'Nodes: '.$n_nodes.'<br>';
+        $node_colors = "1 2 3 2 3"; 
+        echo 'Colors: '.$node_colors.'<br>';
+        echo 'values:';
+        echo '<pre>';
         $values = array();
         $values[0] ="1 2" ;
         $values[1] = "2 3";
         $values[2] = "2 4";
         $values[3] = "1 5";
         //$values[4] = "1 5";
-        
+        var_dump($values);
+        echo '</pre>';
+        echo '<br>';
         $colors = explode(" ", $node_colors);
         $nodes = array();
         for($i=0; $i<$n_nodes; $i++){ 
             array_push($nodes, new Ejercicio2($colors[$i]));
         }
 
-        for($i=0; $i<($n_nodes-1); $i++){ // load up all the edges
+        for($i=0; $i<($n_nodes-1); $i++){ 
             $in = explode(" ", $values[$i]);
             $a = $in[0]-1;
             $b = $in[1]-1;
@@ -87,7 +93,10 @@
             echo $sum."\n";
         }
     ?>
+    <br>
+    <p>Omitir esta parte</p>
     <form action="#" method="POST">
+        
         <label for="dataType">
             Tipo de movimiento
             <select name="dataType" id="dataType" required>
