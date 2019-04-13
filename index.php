@@ -2,45 +2,7 @@
     /**
      * Import class
      */
-    require_once 'class_data.php';
-    $data = new Data();
-    echo '<br>Solve the next problem prioritizing performance<br>';
-    var_dump($data->getDataArray());
-    echo '<br>Ejemplo 1<br>';
-    $data->setDataArray(9);
-    $data->setDataArray(2);
-    $data->setDataArray(8);
-    $data->setDataArray('4');
-    $data->setDataArray('1');
-    echo 'Media<br>';
-    var_dump($data->getMedian());
-    echo '<br>Final<br>';
-    $data->clearDataArray();
-    echo '<br>Ejemplo 2<br>';
-    $data->setDataArray(5);
-    $data->setDataArray(2);
-    $data->setDataArray(10);
-    $data->setDataArray('4');
-    echo 'Media<br>';
-    var_dump($data->getMedian());
-    echo '<br>Final<br>';
-    $data->clearDataArray();
-    echo '<br>Sample Output<br>';
-    $data->removeDataArray(1);
-    $data->setDataArray(1);
-    echo ($data->getMedian().'<br>');
-    $data->setDataArray(2);
-    echo ($data->getMedian().'<br>');
-    $data->setDataArray(1);
-    echo ($data->getMedian().'<br>');
-    $data->removeDataArray(1);
-    $data->removeDataArray(2);
-    $data->removeDataArray(1);
-    echo '<br>Final<br>';
-
-
-
-    
+    require_once 'Ejercicio1.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +13,42 @@
     <title>FRUBANA</title>
 </head>
 <body>
+    <?php
+        $data = new Ejercicio1();
+        echo '<br>1....<br>';
+        var_dump($data->getDataArray());
+        echo '<br>Ejemplo 1<br>';
+        $data->setDataArray(9);
+        $data->setDataArray(2);
+        $data->setDataArray(8);
+        $data->setDataArray('4');
+        $data->setDataArray('1');
+        echo 'Media<br>';
+        var_dump($data->getMedian());
+        echo '<br>Final<br>';
+        $data->clearDataArray();
+        echo '<br>Ejemplo 2<br>';
+        $data->setDataArray(5);
+        $data->setDataArray(2);
+        $data->setDataArray(10);
+        $data->setDataArray('4');
+        echo 'Media<br>';
+        var_dump($data->getMedian());
+        echo '<br>Final<br>';
+        $data->clearDataArray();
+        echo '<br>Sample Output<br>';
+        $data->removeDataArray(1);
+        $data->setDataArray(1);
+        echo ($data->getMedian().'<br>');
+        $data->setDataArray(2);
+        echo ($data->getMedian().'<br>');
+        $data->setDataArray(1);
+        echo ($data->getMedian().'<br>');
+        $data->removeDataArray(1);
+        $data->removeDataArray(2);
+        $data->removeDataArray(1);
+        echo '<br>Final<br>';
+    ?>
     <form action="#" method="POST">
         <label for="dataType">
             Tipo de movimiento
