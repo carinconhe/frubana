@@ -1,9 +1,6 @@
 <?php
     class Ejercicio1 { 
-        var $resultMediana;
         var $dataArray=[];
-        var $resultNode;
-
         
         /**
          * Constructor

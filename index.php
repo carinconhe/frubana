@@ -3,6 +3,7 @@
      * Import class
      */
     require_once 'Ejercicio1.php';
+    require_once 'Ejercicio2.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,6 +49,43 @@
         $data->removeDataArray(2);
         $data->removeDataArray(1);
         echo '<br>Final<br>';
+
+        echo '<br>2....<br>';
+        $n_nodes = 5; 
+        $node_colors = "1 2 3 2 3"; // node colors
+        $values = array();
+        $values[0] ="1 2" ;
+        $values[1] = "2 3";
+        $values[2] = "2 4";
+        $values[3] = "1 5";
+        //$values[4] = "1 5";
+        
+        $colors = explode(" ", $node_colors);
+        $nodes = array();
+        for($i=0; $i<$n_nodes; $i++){ 
+            array_push($nodes, new Ejercicio2($colors[$i]));
+        }
+
+        for($i=0; $i<($n_nodes-1); $i++){ // load up all the edges
+            $in = explode(" ", $values[$i]);
+            $a = $in[0]-1;
+            $b = $in[1]-1;
+            $nodes[$a]->addEdge($b);
+            $nodes[$b]->addEdge($a);
+        }
+        
+        for($i=0; $i<$n_nodes; $i++){
+            $sum = 0;
+            for($j=0; $j<$n_nodes; $j++){
+                if($i==$j){
+                    $sum=$sum+1;
+                } else {
+                    $x = array_unique($nodes[$i]->tryAllEdges($j, array($i)));
+                    $sum = $sum + count($x);   
+                }
+            }
+            echo $sum."\n";
+        }
     ?>
     <form action="#" method="POST">
         <label for="dataType">
